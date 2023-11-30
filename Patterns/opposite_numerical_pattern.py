@@ -19,8 +19,8 @@ Sample Output 2:
 Constraints
 0 <= N <= 50
 """
-
-def opposite_numerical_pattern(n):
+# First Approach
+def opposite_numerical_pattern_approach1(n):
     if 0 <= n <= 50:
         for i in range(n):
             temp_n = 1
@@ -35,4 +35,20 @@ def opposite_numerical_pattern(n):
         print("Out of bound!")
 
 
-opposite_numerical_pattern(10)
+opposite_numerical_pattern_approach1(10)
+
+
+# Second Approach
+def opposite_numerical_pattern_approach2(n):
+    if 0 <= n <= 50:
+        for i in range(n): # row loop
+            for j in range(n-i-1): # spacing loop where for each row i we have n-i-1 space
+                print(" ", end=" ")
+            for k in range(1, i+2): # number printing loop based on i
+                print(k, end=" ")
+            print()
+    else:
+        print("Out of bound!")
+
+
+opposite_numerical_pattern_approach2(10)
