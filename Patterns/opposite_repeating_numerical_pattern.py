@@ -26,7 +26,8 @@ Constraints :
 
 """
 
-def opposite_repeating_numerical_pattern(n):
+# First approach
+def opposite_repeating_numerical_pattern_approach1(n):
     if 0 <= n <= 50:
         temp_n = n
         for i in range(n):
@@ -40,4 +41,17 @@ def opposite_repeating_numerical_pattern(n):
     else:
         print("Out of bound!")
 
-opposite_repeating_numerical_pattern(10)
+opposite_repeating_numerical_pattern_approach1(9)
+
+# Second Approach
+def opposite_repeating_numerical_pattern_approach2(n):
+    if 0 <= n <= 50:
+        for i in range(n):
+            for j in range(n-i):
+                print(n-i, end=" ")
+            print()
+    else:
+        print("Out of bound!")
+
+
+opposite_repeating_numerical_pattern_approach2(9)
