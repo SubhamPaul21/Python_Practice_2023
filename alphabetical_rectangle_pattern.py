@@ -29,11 +29,11 @@ Pattern in N lines
 
 def alphabetic_pattern(n):
     if 0 <= n <= 26:
-        ascii_code_A = 65
+        # ascii_code_A = 65
         for i in range(n): # row range
             for j in range(i+1): # column range 
-                print(chr(ascii_code_A), end="")
-            ascii_code_A += 1
+                print(chr(65 + i), end="")
+            # ascii_code_A += 1
             print()
     else:
         print("Out of bound")
