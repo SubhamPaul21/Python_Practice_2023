@@ -20,31 +20,35 @@ Constraints :
 1 <= N <= 49
 """
 
-import math
-
 def diamond_star_pattern(n):
-    if 1 <= n <= 49 and n % 2 != 0:
-        mid = math.ceil(n / 2)
+  if 1 <= n <= 49:
+    if n % 2 != 0:
+      mid = (n // 2) + 1
 
-        # Forward pattern loop
-        for i in range(mid):
-            # spacing loop
-            for j in range(mid - i - 1): print(" ", end=" ")
-            # star loop
-            for k in range(i+1, (i+1)*2): print("*", end=" ")
-            # trailing star loop
-            for l in range(i*2, i, -1): print("*", end=" ")
-            print()
+      # first part row loop
+      for i in range(mid):
+        # space printing loop
+        for j in range(mid - i - 1):
+          print(".", end=" ")
+        # star printing loop
+        for j in range((2 * i) + 1):
+          print("*", end=" ")
+        # print new line
+        print()
 
-        # Reverse pattern loop
-        for j in range(mid - 1, 0, -1):
-            # spacing loop
-            for m in range(mid - j): print(" ", end=" ")
-            # star loop
-            for n in range(j, j*2): print("*", end=" ")
-            # trailing star loop
-            for o in range(j, 1, -1): print("*", end=" ")
-            print()
-    else: print("Out of bound!")
+      # second part row loop
+      for i in range(1, mid):
+        # space printing loop
+        for j in range(i):
+          print(".", end=" ")
+        # reverse star printing loop
+        for j in range(n - (2 * i)):
+          print("*", end=" ")
+        # print new line
+        print()
+    else:
+      print("Enter odd number only")
+  else:
+    print("Out of bound!")
 
-diamond_star_pattern(21)
+diamond_star_pattern(5)
