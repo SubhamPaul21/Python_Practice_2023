@@ -41,10 +41,13 @@ opposite_numerical_pattern_approach1(10)
 # Second Approach
 def opposite_numerical_pattern_approach2(n):
     if 0 <= n <= 50:
-        for i in range(n): # row loop
-            for j in range(n-i-1): # spacing loop where for each row i we have n-i-1 space
+        # row loop
+        for i in range(n): 
+            # spacing loop where for each row i we have (n-i-1) space
+            for j in range(n-i-1): 
                 print(" ", end=" ")
-            for k in range(1, i+2): # number printing loop based on i
+            # number printing loop based on i
+            for k in range(1, i+2): 
                 print(k, end=" ")
             print()
     else:

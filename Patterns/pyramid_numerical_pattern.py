@@ -22,11 +22,15 @@ Constraints :
 
 def pyramid_numerical_pattern(n):
     if 0 <= n <= 50:
+        # row loop
         for i in range(n):
+            # spacing loop
             for j in range(n-i-1):
                 print(" ", end=" ")
+            # front till middle -- number printing loop
             for k in range(i+1, (i+1)*2):
                 print(k, end=" ")
+            # reverse number printing loop
             for l in range(i*2, i, -1):
                 print(l, end=" ")
             print()
